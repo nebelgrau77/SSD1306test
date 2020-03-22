@@ -1,0 +1,29 @@
+[package]
+name = "images"
+version = "0.1.0"
+authors = ["nebelgrau"]
+edition = "2018"
+
+[dependencies]
+
+cortex-m = "0.6.1"
+cortex-m-rt = "0.6.10"
+
+stm32f4xx-hal = {version = "0.7.0", features = ["stm32f407", "rt"]}
+stm32f4 = "0.9.0"
+
+nb = "0.1.2"
+bare-metal = {version = "0.2.5", features = ["const-fn"]}
+embedded-hal = {version = "0.2.3", features = ["unproven"]}
+
+panic-halt = "0.2.0"
+
+ssd1306 = {version ="0.2.6", features=["graphics"]}
+embedded-graphics = "0.4.9"
+tinybmp = {version = "0.2.2",features = ["graphics"]}
+
+
+[profile.release]
+debug = true
+lto = true
+opt-level = "z"
